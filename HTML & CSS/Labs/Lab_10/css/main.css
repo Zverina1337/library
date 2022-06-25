@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, Tahoma, sans-serif;
+    width: 80em;
+    margin: 0 auto;
+    background: url(img/main_bg.png) no-repeat grey fixed;
+    background-size: cover;
+}
+.header{
+    background-color: rgba(0, 0, .255, .3);
+}
+.img {
+    display: inline-block;
+    width: 10em;
+    float: left;
+}
+.h1{
+    display: inline-block;
+    font-size: 7em;
+    float: right;    
+}
+.nav1{
+    width: 80em;
+}
+.nav1 a{
+    text-decoration: none;
+    font-size: 3em;
+    color: black;
+}
+.nav1 a:visited{
+    color: black;
+}
+.main{
+    background-color: rgba(0, 255, 0, .3);
+}
+.main .section:first-child > .article > img{
+    width: 80em;
+}
+.main .section:first-child > .article::before{
+    content: '<';
+    position: absolute;
+    color: black;
+    background: rgba(255, 255, 255, .7);
+    font-size: 5em;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    cursor: pointer;
+}
+
+.main .section:first-child > .article::after{
+    content: '>';
+    position: absolute;
+    color: black;
+    background: rgba(255, 255, 255, .7);
+    font-size: 5em;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    cursor: pointer;
+}
+
+.main > .section:nth-child(2){
+    background-color: rgba(255, 255, 0, .3);
+}
+
+.main > .section:nth-child(2) > .article{
+    display: inline-block;
+    width: 20em;
+}
+
+.footer{
+    background-color: rgba(255, 0, 0, .3);
+}
+.nav2{
+    display: inline-block;
+}
+.nav2 > a {
+    text-decoration: none;
+    font-size: 3em;
+    color: black;
+}
+.nav2 > a:visited{
+    color: black;
+}
+.footer > img{
+    display: inline-block;
+    width: 10em;
+}

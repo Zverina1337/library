@@ -1,0 +1,57 @@
+.layer1{
+    position: absolute;
+    left: 20px;
+    background: #fc3;
+    margin: 7px;
+}
+.layer1{
+    position: relative;
+    left: -12px;
+    top: 13px;
+    bottom: 1px solid black;
+    padding: 5px;
+    margin: 7px;
+}
+#z-index{
+    position: absolute;
+    top: 100px;
+}
+.pic{
+    position: relative;
+}
+.shade{
+    top: 45px;
+    left: 60px;
+    z-index: 9;
+}
+.pic1{
+    left: -400px;
+    z-index: 5;
+}
+.pic2{
+    top: 25px;
+    left: -950px;
+    z-index: 7;
+}
+.pic:hover{
+    z-index: 11;
+}
+
+#wrapper p{
+    width: 300px;
+    height: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    bottom: 2px solid red;
+    overflow: scroll;
+}
+#wrapper > p:first-child{
+    margin: 15px 5px 10px 20px;
+    padding: 1px;
+    text-align: left;
+}
+#wrapper > p:last-child{
+    margin-top: 20px;
+    padding: 5px 10px 5px 20px;
+    text-align: justify;
+}

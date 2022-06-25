@@ -1,0 +1,198 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0 2.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    z-index: 1;
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+nav,
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li {
+    float: left;
+    position: relative;
+    height: 100%;
+}
+
+nav li ul {
+    display: none;
+    width: 100px;
+    cursor: pointer;
+}
+
+nav li:hover ul {
+    display: block;
+    position: absolute;
+    animation: anim3 400ms easy-in;
+}
+
+nav li a {
+    display: inline-block;
+    margin-right: 50px;
+    font-size: 25px;
+    z-index: 1;
+}
+
+header {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 100px;
+}
+
+.logo h1 {
+    font-weight: lighter;
+    font-size: 50px;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    width: 1300px;
+    height: 1300px;
+    background: rgb(243, 200, 148);
+    top: -700px;
+    left: 500px;
+    z-index: -1;
+}
+
+main {
+    width: 100%;
+    height: 800px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text {
+    width: 100%;
+    font-size: 25px;
+    margin: 40px 0;
+}
+
+.all {
+    width: 30%;
+}
+
+.all h1 {
+    font-size: 36px;
+    font-weight: normal;
+}
+
+.all button {
+    width: 250px;
+    height: 100px;
+    background-color: rgb(243, 200, 148);
+    border-radius: 20px;
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.all button:hover {
+    animation: anim 500ms infinite;
+}
+
+main .images>div>img {
+    width: 600px;
+}
+
+main .images>div>img:hover {
+    animation: anim2 1s infinite;
+}
+
+.images {
+    width: 53%;
+    height: 50%;
+}
+
+.arrow {
+    position: absolute;
+    width: 150px;
+}
+
+.arrow:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 200px;
+    left: 750px;
+}
+
+.arrow:nth-child(2) {
+    transform: rotate(-30deg);
+    top: 100px;
+    left: 900px;
+}
+
+.arrow:nth-child(3) {
+    top: 50px;
+    left: 1100px;
+}
+
+.arrow:nth-child(4) {
+    transform: rotate(30deg);
+    top: 100px;
+    left: 1300px;
+}
+
+.arrow:nth-child(5) {
+    transform: rotate(50deg);
+    top: 200px;
+    left: 1450px;
+}
+
+@keyframes anim {
+    0% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes anim2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(30deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-30deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}

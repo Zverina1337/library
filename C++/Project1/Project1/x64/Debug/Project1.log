@@ -1,0 +1,15 @@
+﻿  Source.cpp
+D:\library\C++\Project1\Project1\Source.cpp(22,47): error C2440: =: невозможно преобразовать "int *" в "int"
+D:\library\C++\Project1\Project1\Source.cpp(22,24): message : Не существует контекста, в котором такое преобразование возможно
+D:\library\C++\Project1\Project1\Source.cpp(30,2): error C3861: sortArray: идентификатор не найден
+D:\library\C++\Project1\Project1\Source.cpp(50,8): error C2109: для индекса требуется массив или указатель
+D:\library\C++\Project1\Project1\Source.cpp(55,26): error C2109: для индекса требуется массив или указатель
+D:\library\C++\Project1\Project1\Source.cpp(56,19): error C2109: для индекса требуется массив или указатель
+D:\library\C++\Project1\Project1\Source.cpp(56,35): error C2109: для индекса требуется массив или указатель
+D:\library\C++\Project1\Project1\Source.cpp(57,19): error C2109: для индекса требуется массив или указатель
+D:\library\C++\Project1\Project1\Source.cpp(62,8): error C3873: "0xab": этот символ недопустим как первый символ идентификатора
+D:\library\C++\Project1\Project1\Source.cpp(62,8): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "«"
+D:\library\C++\Project1\Project1\Source.cpp(62,8): error C2065: «: необъявленный идентификатор
+D:\library\C++\Project1\Project1\Source.cpp(62,11): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "endl"
+D:\library\C++\Project1\Project1\Source.cpp(62,11): warning C4551: в вызове функции отсутствует список аргументов
+D:\library\C++\Project1\Project1\Source.cpp(72,24): error C2109: для индекса требуется массив или указатель

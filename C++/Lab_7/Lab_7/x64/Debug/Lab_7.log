@@ -1,0 +1,3 @@
+﻿  Source.cpp
+D:\library\python\Lab_7\Lab_7\Source.cpp(141): warning C4715: getInfoForForm: значение возвращается не при всех путях выполнения
+  Lab_7.vcxproj -> D:\library\python\Lab_7\x64\Debug\Lab_7.exe

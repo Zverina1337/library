@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5e5e5;
+    user-select: none;
+}
+button{
+    outline: none;
+    border: none;
+}
+a{
+
+}
+.eyebrow{
+    width: 150px;
+    height: 40px;
+    background: black;
+    position: absolute;
+    top: 39px;
+    left: 845px;
+    z-index: 3;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.phone{
+    width: 428px;
+    height: 926px;
+    border-radius: 50px;
+    border: 4px solid black;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    background: radial-gradient(circle,#7D54F2 0%,#9278ec 0%,
+    #9278ec 12.5%,#7D54F2 12.5%,
+    #7D54F2 24%,#9278ec 24%,
+    #9278ec 36.5%,#7D54F2 36.5%,
+    #7D54F2 49%,#9278ec 49%,
+    #9278ec 61.5%,#7D54F2 61.5%,
+    #7D54F2 74%,#9278ec 74%,
+    #9278ec 86.5%,#7D54F2 86.5%,
+    #7D54F2 100%,#9278ec 100%);
+    animation: infinite rotateBG 3s;
+}
+.flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.hidden{
+    visibility: hidden;
+    position: absolute;
+}
+.bg_phone_2{
+    background: linear-gradient(337.4deg, rgba(255, 255, 255, 0.2) 27.99%, rgba(209, 209, 209, 0.2) 54.28%),
+    linear-gradient(347.94deg, rgba(255, 255, 255, 0.2) 51.56%, rgba(209, 209, 209, 0.2) 100%),
+    linear-gradient(192.06deg, #FFFFFF 51.56%, #D1D1D1 100%);
+}
