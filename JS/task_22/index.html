@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="elem1" data-text="str">text</div>
+    <div data-num="1" class="text">text</div>
+    <div data-num="2" class="text">text</div>
+    <div data-num="3" class="text">text</div>
+    <div data-num="4" class="text">text</div>
+    <div data-num="5" class="text">text</div>
+    <button data-clicks="0" id="btn">Click</button>
+    <input id="elem2" data-length="5">
+    <input id="elem3" data-min="5" data-max="10">
+    <div id="elem4" data-product-price="1000" data-product-amount="5">
+        товар яблоки
+    </div>
+    <p data-num="null" class="p">0</p>
+    <p data-num="null" class="p">0</p>
+    <p data-num="null" class="p">0</p>
+    <p data-num="null" class="p">0</p>
+    <p data-num="null" class="p">0</p>
+    <script>
+        let elem1 = document.getElementById("elem1");
+        elem1.addEventListener('click', ()=>{
+            elem1.innerHTML += elem1.dataset.text;
+        });
+        let elems = document.querySelectorAll(".text");
+        for(let el of elems){
+            el.addEventListener("click", func);
+        }
+        function func(){
+            this.innerHTML += this.dataset.num;
+        }
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", ()=>{
+            btn.dataset.clicks++; 
+        });
+        btn.addEventListener("dblclick",()=>{
+            alert(btn.dataset.clicks);
+        })
+        let elem2 = document.getElementById("elem2");
+        elem2.addEventListener("blur",()=>{
+            if(elem2.dataset.length != elem2.value.length){
+                alert("0");
+            }else{
+                alert("1");
+            }
+        })
+        let elem3 = document.getElementById("elem3");
+        elem3.addEventListener("blur",()=>{
+            if(elem3.dataset.min <= elem3.value.length && elem3.value.length <= elem3.dataset.max){
+                alert("1");
+            }else{
+                alert("0");
+            }
+        })
+        let elem4 = document.getElementById("elem4");
+        elem4.addEventListener("click",()=>{
+            elem4.innerHTML += elem4.dataset.productPrice * elem4.dataset.productAmount;
+        });
+        let all_p = document.querySelectorAll(".p");
+        for(let i = 0;i < all_p.length;i++){
+            all_p[i].setAttribute("data-num",i);
+        }
+    </script>
+</body>
+</html>
