@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="textarea" id="textarea"></textarea>
+    <p class="p1"></p>
+    <input type="text" id="elem2">
+    <input type="text" id="elem3" disabled>
+    <button id="btn1">1</button>
+    <button id="btn2">2</button>
+    <input type="text" id="elem4">
+    <button id="btn3"></button>
+    <script>
+        let textarea = document.getElementById("textarea");
+        let p1 = document.querySelector(".p1");
+        textarea.addEventListener("blur",()=>{
+            p1.innerHTML = textarea.value;
+        });
+        ///////////////////////////////////////////////////
+        let inp1 = document.getElementById("elem2");
+        inp1.addEventListener("click",()=>{
+            inp1.disabled = "true"; 
+        });
+        let inp2 = document.getElementById("elem3");
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        btn1.addEventListener("click",()=>{
+            inp2.disabled = true;
+        });
+        btn2.addEventListener("click",()=>{
+            inp2.disabled = false;
+        });
+        let inp3 = document.getElementById("elem4");
+        let btn3 = document.getElementById("btn3");
+        btn3.addEventListener("click",()=>{
+            alert(inp3.disabled);
+        })
+    </script>
+</body>
+</html>

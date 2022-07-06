@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="elem1">
+    <button id="btn1">T</button>
+    <button id="btn2">F</button>
+    <input type="checkbox" id="elem2">
+    <button id="btn3">click</button>
+    <p></p>
+    <input type="checkbox" id="elem3">
+    <button id="btn4">click</button>
+    <input type="radio" name="radio" value="1">
+    <input type="radio" name="radio" value="2">
+    <input type="radio" name="radio" value="3">
+    <button id="btn5">click</button>
+    <p id="p1"></p>
+    <script>
+        let elem1 = document.getElementById("elem1");
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        btn1.addEventListener("click",()=>{
+            elem1.checked = true;
+        });
+        btn2.addEventListener("click",()=>{
+            elem1.checked = false;
+        });
+        let elem2 = document.getElementById("elem2");
+        let btn3 = document.getElementById("btn3");
+        let p = document.querySelector("p");
+        btn3.addEventListener("click",()=>{
+            if(elem2.checked){
+                p.innerHTML = "Привет!";
+            }else{
+                p.innerHTML = "Пока(";
+            }
+        });
+        let elem3 = document.getElementById("elem3");
+        let btn4 = document.getElementById("btn4");
+        btn4.addEventListener("click",()=>{
+            elem3.checked = !elem3.checked;
+        });
+        let radios = document.querySelectorAll('input[type="radio"]')
+        let p1 = document.getElementById("p1");
+        let btn5 = document.getElementById("btn5");
+
+        btn5.addEventListener("click",()=>{
+            for(let radio of radios){
+                if(radio.checked){
+                    p1.innerHTML = radio.value;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
