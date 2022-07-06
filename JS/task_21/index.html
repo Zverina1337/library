@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>elem2
+        <div>elem2
+            <p>
+                <span id="elem2">elem2</span>
+            </p>
+        </div>
+    </header>
+    <header>
+        <div class="www">elem3
+            <p class="www">elem3
+                <span id="elem3">elem3</span>
+            </p>
+        </div>
+    </header>
+    <ul id="elem">
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
+    <div>
+        <ul>
+            <li>text</li>
+            <li>text</li>
+            <li id="elem1">text</li>
+            <li>text</li>
+            <li>text</li>
+        </ul>
+    </div>
+    <ul>
+        <li>text1</li>
+        <li>text2</li>
+        <li id="elem4">text3</li>
+        <li>text4</li>
+        <li>text5</li>
+    </ul>
+    <script>
+        ////////////////////////////////////////////
+        let parent = document.getElementById("elem");
+        let first_child = parent.firstElementChild;
+        let last_child = parent.lastElementChild;
+        let all_children = parent.children;
+        first_child.style.color = "red";
+        last_child.style.color = "red";
+        for(let child of all_children){
+            child.innerHTML += "!"
+        }
+        ///////////////////////////////////////////
+        let element = document.getElementById("elem1");
+        element.parentElement.style.border = "1px solid black";
+        element.parentElement.parentElement.style.border = "1px solid black";
+        //////////////////////////////////////////
+        let element1 = document.getElementById('elem2');
+        let any_parent = element1.closest('div');
+        any_parent.style.color = "red";
+        let element2 = document.getElementById("elem3");
+        let any_parent2 = element2.closest('www');
+        /////////////////////////////////////////
+        let some_elem = document.getElementById("elem4");
+        some_elem.previousElementSibling.innerHTML += "!";
+        some_elem.nextElementSibling.innerHTML += "!";
+        some_elem.nextElementSibling.nextElementSibling.innerHTML += "!";
+        let text = some_elem.previousElementSibling.innerHTML;
+        some_elem.previousElementSibling.innerHTML = some_elem.nextElementSibling.innerHTML;
+        some_elem.nextElementSibling.innerHTML = text;
+    </script>
+</body>
+</html>
