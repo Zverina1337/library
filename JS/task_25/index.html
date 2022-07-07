@@ -7,7 +7,51 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <script></script>
+    <input type="text" id="input1">
+    <p id="p1"></p>
+    <input type="checkbox" name="checkbox" id="checkbox">
+    <input type="text" id="input2">
+    <input type="text" id="input3">
+    <input type="text" id="input4">
+    <input type="text" id="input5">
+    <input type="text" id="input6">
+    <p id="p2"></p>
+    <script>
+        let input1 = document.getElementById("input1");
+        let p1 = document.getElementById("p1");
+        input1.addEventListener("change",function(){
+            p1.innerHTML = this.value;
+        });
+        let checkbox = document.getElementById("checkbox");
+        checkbox.addEventListener("change",function(){
+            alert(this.checked);
+        });
+        let input2 = document.getElementById("input2");
+        input2.addEventListener("change",function(){
+            if(this.value.length < 5){
+                input2.style.border = "1px solid green";
+            }else{
+                input2.style.border = "1px solid red"; 
+            }
+        });
+        let input3 = document.getElementById("input3");
+        input3.addEventListener("input",function(){
+            if(this.value.length == 5){
+                alert("1");
+            }
+        });
+        let input4 = document.getElementById("input4");
+        let p2 = document.getElementById("p2");
+        input4.addEventListener("input",function(){
+            p2.innerHTML = 5 - this.value.length;
+        });
+        let input5 = document.getElementById("input5");
+        let input6 = document.getElementById("input6");
+        input5.addEventListener("input", ()=>{
+            if(input5.value.length == 2){
+                input6.focus();
+            }
+        });
+    </script>
 </body>
 </html>

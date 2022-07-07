@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="select1" id="select1">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <p id="p1"></p>
+    <button id="btn1">click</button>
+    <select name="years" id="select2">
+        <option value="0">2020</option>
+        <option value="1">2021</option>
+        <option value="2">2022</option>
+        <option value="3">2023</option>
+        <option value="4">2024</option>
+        <option value="5">2025</option>
+        <option value="6">2026</option>
+        <option value="7">2027</option>
+        <option value="8">2028</option>
+        <option value="9">2029</option>
+        <option value="10">2030</option>
+    </select>
+    <select name="select3" id="select3">
+        <option value="1">ПН</option>
+        <option value="2">ВТ</option>
+        <option value="3">СР</option>
+        <option value="4">ЧТ</option>
+        <option value="5">ПТ</option>
+        <option value="6">СБ</option>
+        <option value="7">ВС</option>
+    </select>
+    <script>
+        let select1 = document.getElementById("select1");
+        let p1 = document.getElementById("p1");
+        let btn1 = document.getElementById("btn1");
+        btn1.addEventListener("click",()=>{
+            p1.innerHTML = select1.value;
+        });
+        let select2 = document.getElementById("select2");
+        select2.addEventListener("change",function(){
+            if(this.value % 4 == 0){
+                alert("Високосный");
+                console.log(this.value);
+            }else{
+                alert("Не високосный");
+            }
+        });
+        let select3 = document.getElementById("select3");
+        select3.addEventListener("change",function(){
+            if(this.value > 5){
+                alert("Выходной");
+            }else{
+                alert("Не выходной");
+            }
+        });
+    </script>
+</body>
+</html>

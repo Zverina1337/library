@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="months" id="select1">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>
+    <input type="text" id="input1">
+    <select name="select2" id="select2">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <select name="days" id="select3">
+        <option value="1">ПН</option>
+        <option value="2">ВТ</option>
+        <option value="3">СР</option>
+        <option value="4">ЧТ</option>
+        <option value="5">ПТ</option>
+        <option value="6">СБ</option>
+        <option value="7">ВС</option>
+    </select>
+    <select name="select4" id="select4">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <select name="select5" id="select5">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <select name="select6" id="select6">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <button id="btn1">click</button>
+    <select name="select7" id="select7">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <button id="btn2">click</button>
+    <select name="select8" id="select8">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <button id="btn3">click</button>
+    <script>
+        let select1 = document.getElementById("select1");
+        select1.addEventListener("blur",function(){
+            this.value = "7";
+        });
+        let select2 = document.getElementById("select2");
+        let input1 = document.getElementById("input1");
+        input1.addEventListener("blur",function(){
+            select2.selectedIndex = this.value - 1;
+        });
+        let select3 = document.getElementById("select3");
+        select3.selectedIndex = 4;
+        let select4 = document.getElementById("select4");
+        for(let option of select4){
+            option.innerHTML += option.value;
+        }
+        let select5 = document.getElementById("select5");
+        for(let option of select5){
+            if(option.selected){
+                option.innerHTML += "?";
+            }else{
+                option.innerHTML += "!";
+            }
+        }
+        let select6 = document.getElementById("select6");
+        let btn1 = document.getElementById("btn1");
+        btn1.addEventListener("click",()=>{
+            select6[select6.length - 1].selected = true;
+        });
+        let select7 = document.getElementById("select7");
+        let btn2 = document.getElementById("btn2");
+        btn2.addEventListener("click",()=>{
+            alert(select7[select7.selectedIndex].innerHTML);
+        });
+        let select8 = document.getElementById("select8");
+        let btn3 = document.getElementById("btn3");
+        btn3.addEventListener("click",()=>{
+            select8[select8.selectedIndex].innerHTML += "!";
+        });
+    </script>
+</body>
+</html>
