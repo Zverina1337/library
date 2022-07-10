@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+</head>
+<body> 
+    <p></p>
+    <ul id="ul">
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
+    <script>
+        let p = document.querySelector("p");
+        document.addEventListener("mousemove",()=>{
+            p.innerHTML = "X: " + event.clientX + " Y: " + event.clientY;
+        });
+        let ul = document.querySelector("ul");
+        ul.addEventListener("click",()=>{
+            if(event.target.tagName.toLowerCase() == "li"){
+                event.target.innerHTML += "!";
+            }else{
+                let li = document.createElement("li");
+                li.innerHTML = event.target.children[0].innerHTML;
+                ul.appendChild(li);
+            }
+        }); 
+    </script>
+</body>
+</html>
