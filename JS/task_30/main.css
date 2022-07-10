@@ -1,0 +1,14 @@
+div, ul, li {
+	padding: 20px;
+    list-style-type: none;
+}
+
+div {
+	border: 1px solid red;
+}
+ul {
+	border: 1px solid orange;
+}
+li {
+	border: 1px solid green;
+}

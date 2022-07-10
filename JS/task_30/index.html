@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="div1">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <input id="elem1" value="text1">
+    <input id="elem2" value="text2">
+    <input id="elem3" value="text3">
+    <input id="elem" value="привет">
+    <script>
+        let div1 = document.getElementById("div1");
+        div1.addEventListener("click",()=>{
+            if(event.target.matches("div")){
+                event.target.innerHTML += "div";
+            }else if(event.target.matches("ul")){
+                let li = document.createElement("li");
+                li.innerHTML = "text";
+                event.target.appendChild(li);
+            }else{
+                event.target.innerHTML += "!";   
+            }
+        });
+        let elem1 = document.getElementById("elem1");
+        let elem2 = document.getElementById("elem2");
+        let elem3 = document.getElementById("elem3");
+
+        function func() {
+	        console.log(this.value);
+        }   
+        func.call(elem1);
+        func.call(elem2);
+        func.call(elem3);
+        let elem = document.querySelector('#elem');
+
+        function func1(surname, name) {
+            console.log(this.value + ', ' + surname + ' ' + name);
+        }
+
+        func1.call(elem, 'Иваное','Иван');
+    </script>
+</body>
+</html>

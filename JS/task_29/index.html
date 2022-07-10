@@ -9,7 +9,26 @@
 <body>
     <input type="text" id="input">
     <p id="p"></p>
-    <script>
+    <p id="p1">АБЗАЦ</p>
+    <ul id="ul">
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
+    <nav id="nav">
+        <a href="123">1</a>
+        <a href="1">2</a>
+        <a href="23">3</a>
+        <a href="3">4</a>
+        <a href="13">5</a>
+    </nav>
+    <input type="text" id="input1">
+    <input type="text" id="input2">
+    <p id="p2"></p>
+    <a href="#" id="a1">Ответ</a>
+<script>
         let p = document.getElementById("p");
         let input = document.getElementById("input")
 
@@ -19,6 +38,37 @@
                 input.value = "";
             };
         })
+        let p1 = document.getElementById('p1');
+        p1.addEventListener("click",()=>{
+            if(event.altKey){
+                p1.style.color = "red";
+            }else{
+                p1.style.color = "black";
+            }
+        });
+        let ul = document.getElementById("ul");
+        ul.addEventListener("click",()=>{
+            if(event.target.tagName.toLowerCase() == "li"){
+                if(event.shiftKey){
+                    event.target.innerHTML += "2";  
+                }else if(event.ctrlKey){
+                    event.target.innerHTML += "1";
+                }
+            };
+        });
+        let nav = document.getElementById("nav");
+        nav.addEventListener("click",()=>{
+            event.preventDefault();
+            event.target.innerHTML += event.target.href;
+        });
+        let input1 = document.getElementById("input1");
+        let input2 = document.getElementById("input2");
+        let p2 = document.getElementById("p2");
+        let a1 = document.getElementById("a1");
+        a1.addEventListener("click",function(){
+            event.preventDefault();
+            p2.innerHTML = Number(input1.value) + Number(input2.value);
+        }); 
     </script>
 </body>
 </html>
