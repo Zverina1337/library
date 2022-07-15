@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="parent"></ul>
+    <script>
+        let parent = document.querySelector("#parent");
+        let arr = [0,1,2,3,4,5];
+
+        for(let elem of arr){
+            let li = document.createElement("li");
+            li.innerHTML = elem;
+
+            li.addEventListener("click", function func(){
+                this.innerHTML += "!";
+                console.log(this.innerHTML);
+                this.removeEventListener("click",func);
+            });
+
+            parent.appendChild(li);
+        }
+
+    </script>
+</body>
+</html>

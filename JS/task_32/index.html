@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="parent">
+        parent
+    </ol>
+    <ul id="parent1"></ul>
+    <div id="parent2">
+        <p id="p"></p>
+    </div>
+    <div id="parent3"></div>
+    <script>
+        let ol = document.getElementById("parent");
+
+        ol.addEventListener("click",()=>{
+            let li = document.createElement("li");
+            li.innerHTML = "li";
+
+            li.addEventListener("click",function(){
+                this.innerHTML += "!";
+            });
+
+            ol.appendChild(li);
+        });
+
+        let ul = document.getElementById("parent1");
+        for(let i = 0;i <= 10;i++){
+            let li = document.createElement("li");
+            li.innerHTML = i;
+            ul.appendChild(li);
+        }
+
+        let div = document.getElementById("parent2");
+        let p = document.getElementById("p");
+        for(let i = 0;i <= 10;i++){
+            let input = document.createElement("input");
+            let br = document.createElement("br");
+            input.value = i;
+            input.addEventListener("blur",function(){
+                p.innerHTML = input.value; 
+            });
+            div.appendChild(input);
+            div.appendChild(br);
+        }
+
+        let parent = document.querySelector('#parent3');
+
+        let arr = [1, 2, 3, 4, 5];
+
+        for (let elem of arr) {
+            let p = document.createElement('p');
+            p.innerHTML = elem;
+            p.addEventListener("click",function(){
+                p.innerHTML++;
+            });
+            parent.appendChild(p);
+        }
+    </script>
+</body>
+</html>

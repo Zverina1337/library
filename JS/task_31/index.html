@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn_1">Таймер</button>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <input type="text" value="10" id="input">
+    <script>
+        let btn_1 = document.getElementById("btn_1");
+        btn_1.addEventListener("click", function func(){
+            let i = 100;
+            setInterval(function(){
+                if(i > 0){
+                    console.log(--i);
+                }
+            },1000);
+            this.removeEventListener('click', func);
+        });
+        let start = document.getElementById("start");
+        let stop = document.getElementById("stop");
+        let timerId;
+
+        function func1(){
+            let i = 100;
+
+            timerId = setInterval(()=>{
+                if(i > 0){
+                    console.log(--i);
+                }
+            },1000);
+            this.removeEventListener("click", func1);
+        };
+        function func(){
+            clearInterval(timerId);
+            start.addEventListener("click",func1);
+        };
+
+        start.addEventListener("click", func1);
+
+        stop.addEventListener("click", func);
+
+        let input = document.getElementById("input");
+
+        setInterval(function(){
+            if(Number(input.value) > 0){
+                input.value = Number(input.value) - 1;
+            }
+        },1000);
+    </script>
+</body>
+</html>
