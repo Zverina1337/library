@@ -5,9 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <ul id="parent"></ul>
+    <input type="text" id="table-x">
+    <input type="text" id="table-y">
+    <button id="btn">Generate</button>
+    <table id="parent1"></table>
     <script>
         let parent = document.querySelector("#parent");
         let arr = [0,1,2,3,4,5];
@@ -25,6 +30,20 @@
             parent.appendChild(li);
         }
 
+        let parent1 = document.getElementById("parent1");
+        let tableX = document.getElementById("table-x");
+        let tableY = document.getElementById("table-y");
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click",function(){
+            for(let i = 0;i < Number(tableY.value);i++){
+            let tr = document.createElement("tr");
+            for(let i = 0;i < Number(tableX.value);i++){
+                let td = document.createElement("td");
+                tr.appendChild(td);
+            }
+            parent1.appendChild(tr);
+        }
+        });
     </script>
 </body>
 </html>

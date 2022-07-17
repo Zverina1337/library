@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <table id="table1"></table>
+    <table id="table2"></table>
+    <table id="table3"></table>
+    <table id="table4"></table>
+    <button id="btn1">Добавить ряд</button>
+    <button id="btn2">Добавить новый столбец</button>
+    <button id="btn3">Добавить</button>
+    <table id="table5">
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <script>
+        let table = document.querySelector('#table1');
+
+        let k = 2; // начальное значение счетчика
+        for (let i = 0; i < 5; i++) {
+            let tr = document.createElement('tr');
+            
+            for (let i = 0; i < 5; i++) {
+                let td = document.createElement('td');
+                
+                td.innerHTML = k; // записываем счетчик в ячейку
+                k += 2; // увеличиваем счетчик
+                
+                tr.appendChild(td);
+            }
+            
+            table.appendChild(tr);
+        }
+
+        let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]];
+        let table2 = document.getElementById("table2");
+
+        for(let subArr of arr){
+            let tr = document.createElement("tr");
+            for (let elem of subArr){
+                let td = document.createElement("td");
+                td.innerHTML = elem*2;
+                tr.appendChild(td);
+            }
+            table2.appendChild(tr);
+        }
+
+        let employees = [
+            {name: 'employee1', age: 30, salary: 400},
+            {name: 'employee2', age: 31, salary: 500},
+            {name: 'employee3', age: 32, salary: 600},
+        ];
+        let table3 = document.getElementById("table3");
+
+        for(let employee of employees){
+            let tr = document.createElement("tr");
+
+            let td1 = document.createElement("td");
+            td1.innerHTML = employee.name;
+            tr.appendChild(td1);
+
+            let td2 = document.createElement("td");
+            td2.innerHTML = employee.age;
+            td2.addEventListener("click",function(){
+                td2.innerHTML = Number(td2.innerHTML) + 1;
+            });
+            tr.appendChild(td2);
+
+            let td3 = document.createElement("td");
+            td3.innerHTML = employee.salary;
+            td3.addEventListener("click",function(){
+                td3.innerHTML = Math.round(Number(td3.innerHTML) + (Number(td3.innerHTML) * 0.1));
+            });
+            tr.appendChild(td3);
+            
+            table3.appendChild(tr);
+        }
+        let table4 = document.getElementById("table4");
+        let btn1 = document.getElementById("btn1");
+
+        btn1.addEventListener("click",function(){
+            let tr = document.createElement("tr");
+
+            for(let i = 0;i < 3;i++){
+                let td = document.createElement("td");
+                td.innerHTML = "x";
+                tr.appendChild(td);
+            }
+            table4.appendChild(tr);
+        });
+
+        let btn2 = document.getElementById("btn2");
+        
+        btn2.addEventListener("click",function(){
+            let trs = document.querySelectorAll('#table4 tr');
+
+            for(let tr of trs){
+                let td = document.createElement("td");
+                td.innerHTML = "x";
+                tr.appendChild(td);
+                table4.appendChild(tr);
+            }
+        });
+        let table5 = document.getElementById("table5");
+        let btn3 = document.getElementById("btn3");
+
+        btn3.addEventListener("click",function(){
+            let trs = document.querySelectorAll("#table5 tr");
+            let tds;
+            for(let tr of trs){
+                tds = tr.cells;
+                let td = document.createElement("td");
+                tr.appendChild(td);
+                table5.appendChild(tr)
+            }
+            let tr = document.createElement("tr");
+            for(let i of tds){
+                let td = document.createElement("td");
+                tr.appendChild(td);
+            }
+            table5.appendChild(tr)
+        });
+    </script>
+</body>
+</html>
