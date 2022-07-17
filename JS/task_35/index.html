@@ -7,6 +7,44 @@
     <title>Document</title>
 </head>
 <body>
-    <script></script>
+    <ul id="elem1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <button id="btn1">li</button>
+    <div id="parent">
+        <p id="elem2">text</p>
+        <a href="" id="remove">remove</a>
+    </div>
+    <script>
+        let elem1 = document.getElementById("elem1");
+        let btn1 = document.getElementById("btn1");
+
+        function func(){
+            let elems1 = document.querySelectorAll("#elem1 li");
+            for (let elem of elems1){
+            elem.addEventListener("click",function(){
+                this.remove();
+            });
+        }};
+
+        btn1.addEventListener("click", function(){
+            let li = document.createElement("li");
+            li.innerHTML = "x";
+            elem1.appendChild(li);
+            func();
+        });
+
+        func();        
+        
+        let elem2 = document.getElementById("elem2");
+        let remove = document.getElementById("remove");
+
+        remove.addEventListener("click",function(event){
+            elem2.remove();
+            event.preventDefault();
+        });
+    </script>
 </body>
 </html>
