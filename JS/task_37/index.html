@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input1">
+    <button id="btn1">Clone</button>
+    <div id="elem1" class="www"></div>
+    <p id="p1"></p>
+    <div id="elem2">
+        <p id="elem3"></p>
+    </div>
+    <div id="parent">
+        <p id="elem4">text</p>
+    </div>
+    <ul id="parent1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <table id="table"></table>
+    <script>
+        let input1 = document.getElementById("input1")
+        let btn1 = document.getElementById("btn1");
+
+        btn1.addEventListener("click",function(){
+            let elem = input1.cloneNode(true);
+            input1.parentElement.appendChild(elem);
+        });
+
+        let elem1 = document.getElementById("elem1");
+        console.log(elem1.matches(".www"));
+
+        let p1 = document.getElementById("p1");
+        console.log(p1.matches("p"));
+
+        let elem2 = document.getElementById("elem2");
+        let elem3 = document.getElementById("elem3");
+
+        console.log(elem2.contains(elem3));
+
+        let elem4 = document.querySelector('#elem4');
+        let input2 = document.createElement('input');
+
+        elem4.addEventListener("click",function(){
+            input2.value = this.innerHTML;
+            this.innerHTML = "";
+            elem4.parentNode.appendChild(input2);
+
+            input2.addEventListener("blur",function (){
+                elem4.innerHTML = this.value;
+                this.parentNode.removeChild(this);
+            });
+        });
+
+        let all_li = document.querySelectorAll("#parent1 li");
+
+        for(let li of all_li){
+            li.addEventListener("click",function func(){
+                let input = document.createElement("input");
+                input.value = this.innerHTML;
+                this.innerHTML = "";
+                li.appendChild(input);
+
+                input.addEventListener("blur",function (){
+                    li.innerHTML = this.value;
+                    this.remove();
+                    li.addEventListener("click",func);
+                });
+
+                li.removeEventListener("click",func);
+            });
+        }
+        
+        let table = document.getElementById("table");
+
+        for(let i = 0; i < 5;i++){
+            let tr = document.createElement('tr');
+            for(let i = 0;i < 5;i++){
+                let td = document.createElement("td");
+                td.innerHTML = "text";
+                
+                td.addEventListener("click",function func(){
+                    let input = document.createElement("input");
+                    input.style.width = "20%";
+                    input.style.marginLeft = "0";
+                    input.value = this.innerHTML;
+                    td.innerHTML = "";
+                    this.appendChild(input);
+
+                    input.addEventListener("blur",function (){
+                        td.innerHTML = this.value;
+                        this.remove();
+                        td.addEventListener("click",func);
+                    });
+
+                    td.removeEventListener("click",func);
+                });
+                tr.appendChild(td);
+            }
+
+            table.appendChild(tr);
+        }
+    </script>
+</body>
+</html>

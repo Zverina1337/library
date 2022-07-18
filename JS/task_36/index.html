@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="parent1">
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
+    <ul id="parent2">
+        <li>text</li>
+        <li>text</li>
+        <li id="elem1">text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
+    <div id="elem2" style="border: 1px solid red;">
+        <p>text</p>
+        <p>text</p>
+        <p>text</p>
+    </div>
+    <div id="elem3" style="border: 1px solid red;">
+        <p>text</p>
+        <p>text</p>
+        <p>text</p>
+    </div>
+    <div id="elem4" style="border: 1px solid red;">
+        <p>text</p>
+        <p>text</p>
+        <p>text</p>
+    </div>
+    <div id="elem5" style="border: 1px solid red;">
+        <p>text</p>
+        <p>text</p>
+        <p>text</p>
+    </div>
+    <div id="elem6" style="border: 1px solid red;">
+        <p>text</p>
+        <p>text</p>
+        <p>text</p>
+    </div>
+    <script>
+        let parent1 = document.getElementById("parent1");
+        let start = document.createElement("li");
+        let finish = document.createElement("li");
+        start.innerHTML = "start";
+        finish.innerHTML = "finish";
+        parent1.append(finish);
+        parent1.prepend(start);
+        
+        let parent2 = document.getElementById("parent2");
+        let before = document.getElementById("elem1");
+        let el = document.createElement("li"); 
+
+        el.innerHTML = "new";
+        el.addEventListener("click",function(){
+            this.innerHTML += "!";
+        });
+
+        parent2.insertBefore(el,before);
+
+        let elem2 = document.getElementById("elem2");
+        let p1 = document.createElement("p");
+
+        p1.innerHTML = "!!!";
+
+        elem2.insertAdjacentElement("beforeBegin",p1);
+
+        let elem3 = document.getElementById("elem3");
+        let p2 = document.createElement("p");
+
+        p2.innerHTML = "!!!";
+
+        elem3.insertAdjacentElement("afterEnd",p2);
+
+        let elem4 = document.getElementById("elem4");
+        let p3 = document.createElement("p");
+        p3.innerHTML = "!!!";
+
+        elem4.insertAdjacentElement("afterbegin",p3);
+
+        let elem5 = document.getElementById("elem5");
+        let p4 = document.createElement("p");
+        p4.innerHTML = "!!!";
+
+        elem5.insertAdjacentElement("beforeEnd",p4);
+        
+        let elem6 = document.getElementById("elem6")
+        elem6.insertAdjacentHTML("beforebegin",'<div class="www"><p>text</p><p>text</p><input></div>');
+        </script>
+</body>
+</html>

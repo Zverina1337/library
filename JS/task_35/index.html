@@ -17,6 +17,12 @@
         <p id="elem2">text</p>
         <a href="" id="remove">remove</a>
     </div>
+    <ul id="parent1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <table id="table1"></table>
     <script>
         let elem1 = document.getElementById("elem1");
         let btn1 = document.getElementById("btn1");
@@ -45,6 +51,43 @@
             elem2.remove();
             event.preventDefault();
         });
+
+        let elems2 = document.querySelectorAll("#parent1 li");
+
+        for(let elem of elems2){
+            let remove = document.createElement("a");
+            remove.href = " ";
+            remove.innerHTML = " remove";
+
+            remove.addEventListener("click",function(event){
+                elem.remove();
+                event.preventDefault();
+            });
+            elem.appendChild(remove);
+        }
+        let table1 = document.getElementById("table1");
+
+        for(let i = 0;i < 5;i++){
+            let tr = document.createElement("tr");
+            let remove = document.createElement("a");
+            remove.href = " ";
+            remove.innerHTML = " remove";
+
+            remove.addEventListener("click",function(event){
+                tr.remove();
+                event.preventDefault();
+            });
+
+            for(let i = 0;i < 5;i++){
+                let td = document.createElement("td");
+                td.innerHTML = "x";
+
+                tr.appendChild(td);
+            }
+
+            tr.appendChild(remove);
+            table1.appendChild(tr);
+        }
     </script>
 </body>
 </html>
