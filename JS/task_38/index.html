@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="parent">
+        <p>text1</p>
+        <p>text2</p>
+        <p>text3</p>
+    </div>
+    <div id="parent1">
+        <p>text1</p>
+        <p>text2</p>
+        <p>text3</p>
+    </div>
+    <table id="table"></table>
+    <script>
+        let all_p= document.querySelectorAll("#parent p");
+
+        for(let p of all_p){
+            let span = document.createElement("span");
+            span.innerHTML = p.innerHTML;
+            p.innerHTML = "";
+
+            
+            let remove = document.createElement("a");
+                remove.href = "";
+                remove.innerHTML = " remove";
+
+                remove.addEventListener("click",function (event){
+                    p.remove();
+                    event.preventDefault();
+                })
+            
+            span.addEventListener("click",function func(){
+                let input = document.createElement("input");
+
+                input.value = this.innerHTML;
+                this.innerHTML = "";
+
+                input.addEventListener("blur",function(){
+                    span.innerHTML = this.value;
+                    this.remove();
+                    span.addEventListener("click",func);
+                });
+                
+                this.parentNode.appendChild(input);
+                this.removeEventListener("click",func);
+            });
+            p.appendChild(span);
+            p.appendChild(remove);
+        }
+
+        let all_p1 = document.querySelectorAll("#parent1 p");
+
+        for(let p of all_p1){
+            let span = document.createElement("span");
+            let style = document.createElement("a");
+            span.innerHTML = p.innerHTML;
+            p.innerHTML = "";
+            p.appendChild(span);
+
+            style.innerHTML = "Stylize";
+            style.href = "";
+            style.addEventListener("click",function(event){
+                span.style.textDecoration = "line-through";
+                event.preventDefault();
+                this.remove();
+            });
+            
+            p.appendChild(style);
+        }
+
+        let table = document.getElementById("table");
+        
+        for(let i = 0;i < 5;i++){
+            let tr = document.createElement("tr");
+            let bg_green = document.createElement("a");
+            bg_green.innerHTML = "green";
+            bg_green.addEventListener("click",function(event){
+                tr.classList.toggle("bg_green");
+                event.preventDefault();
+            });
+            for(let i = 0;i < 5;i++){
+                let td = document.createElement("td");
+                td.innerHTML = "x";
+                tr.appendChild(td);
+            }
+            tr.appendChild(bg_green);
+            table.appendChild(tr);
+            
+        }
+    </script>
+</body>
+</html>
