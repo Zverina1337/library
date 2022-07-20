@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = '^xx axx ^zz bkk @ss';
+        let str1 = '^xx axx ^zz bkk';
+        console.log(str.replace(/[@^][a-zA-Z]{2}/g,"!"));
+        console.log(str.replace(/[^@^][a-zA-Z]{2}/g,"!"));
+        console.log(str1.replace(/[^^][a-zA-Z]{2}/g,"!"));
+
+        let str2 = 'xaz xBz xcz x-z x@z';
+        let str3 = 'xaz x$z x-z xcz x+z x%z x*z';
+        console.log(str2.replace(/x[a-zA-Z\-]z/g,"!"));
+        console.log(str3.replace(/x[$\-+]z/g,"!"));
+
+        let str4 = 'abc def xyz';
+        console.log(str4.replace(/^\w{3}/g,"!"));
+        console.log(str4.replace(/\w{3}$/g,"!"));
+
+        let str5 = 'aeeea aeea aea axa axxa axxxa';
+        console.log(str5.replace(/a(e+|x+)a/g,"!"));
+        console.log(str5.replace(/a(e{2}|x+)a/g,"!"));
+    </script>
+</body>
+</html>

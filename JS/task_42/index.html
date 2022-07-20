@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = 'aba aea aca aza axa';
+        let str1 = 'a1a a3a a7a a9a aba';
+        let str2 = 'aba aea afa aha aga';
+        let str3 = 'aba aea afa aha aga';
+        let str4 = 'aAa aea aEa aJa a3a';
+        let str5 = 'aAXa aeffa aGha aza ax23a a3sSa';
+        let str6 = 'aAXa aeffa aGha aza ax23a a3sSa';
+        console.log(str.replace(/a[bex]a/g,"!"));
+        console.log(str1.replace(/a[3-6]a/g,"!"));
+        console.log(str2.replace(/a[a-g]a/g,"!"));
+        console.log(str3.replace(/a[a-fj-z]a/g,"!"));
+        console.log(str4.replace(/a[a-fA-D]a/g,"!"));
+        console.log(str5.replace(/a[a-z]+a/g,"!"));
+        console.log(str6.replace(/a[a-zA-Z]+a/g,"!"));
+        console.log(str6.replace(/a[a-z1-9]+a/g,"!"));
+
+        console.log(/1[^ex]2/g);
+        console.log(/x[^2-7]z/g);
+        console.log(/x[^A-Z]+z/g);
+        console.log(/x[^A-Za-z1-5]+z/g);
+
+        let str7 = 'wйw wяw wёw wqw';
+        let str8 = 'ааа ббб ёёё ззз ййй ААА БББ ЁЁЁ ЗЗЗ ЙЙЙ';
+        console.log(str7.replace(/w[а-яё]w/g,"!"));
+        console.log(str8.replace(/[а-яёА-ЯЁ]/g,"!"));
+
+        let str9 = 'aba aea aca aza axa a.a a+a a*a';
+        let str10 = 'xaz x.z x3z x@z x$z xrz';
+        console.log(str9.replace(/a[.+*]a/g,"!"));
+        console.log(str10.replace(/x[^.@$]z/g,"!"));
+
+        console.log(/[\d.]+/g);
+        console.log(/\W[a-g]{3-7}/);
+
+        let str11 = 'x[]z x{}z x.z x()z';
+        let str12 = '[abc] {abc} abc (abc) [abc]';
+        console.log(str11.replace(/x[\[\]\)\(\{\})]*z/g,"!"));
+        console.log(str12.replace(/[\[\]\)\(\{\})]abc[\[\]\)\(\{\})]/g,"!"));
+    </script>
+</body>
+</html>
