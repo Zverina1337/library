@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = 'ahb acb aeb aeeb adcb axeb';
+        let str1 = 'aba aca aea abba adca abea';
+        let str2 = 'aba aca aea abba adca abea';
+        console.log(str.replace(/a.b/g,"!"));
+        console.log(str1.replace(/a..a/g,"!"));
+        console.log(str2.replace(/ab.a/g,"!"));
+        
+        let str3 = 'aa aba abba abbba abca abea';
+        console.log(str3.replace(/ab+a/g,"!"));
+        console.log(str3.replace(/ab*a/g,"!"));
+        console.log(str3.replace(/ab?a/g,"!"));
+        console.log(str3.replace(/ab*a/g,"!"));
+
+        let str4 = 'ab abab abab abababab abea';
+        console.log(str4.replace(/(ab)+/g,"!"));
+
+        let str5 = 'a.a aba aea';
+        let str6 = '2+3 223 2223';
+        let str7 = '23 2+3 2++3 2+++3 445 677';
+        let str8 = '*+ *q+ *qq+ *qqq+ *qqq qqq+';
+        let str9 = '[abc] {abc} abc (abc) [abc]';
+        console.log(str5.replace(/a\.a/g,"!"));
+        console.log(str6.replace(/2\+3/g,"!"));
+        console.log(str7.replace(/2\++3/g,"!"));
+        console.log(str7.replace(/2\+*3/g,"!"));
+        console.log(str8.replace(/\*q+\+/g,"!"));
+        console.log(str9.replace(/\[...\]/g,"!"));
+
+        let str10 = 'aa aba abba abbba abbbba abbbbba';
+        console.log(str10.replace(/ab{2,4}a/g,"!"));
+        console.log(str10.replace(/ab{0,3}a/g,"!"));
+        console.log(str10.replace(/ab{4,}a/g,"!"));
+
+        let str11 = 'a1a a2a a3a a4a a5a aba aca';
+        let str12 = 'a1a a22a a333a a4444a a55555a aba aca';
+        let str13 = 'aa a1a a22a a333a a4444a a55555a aba aca';
+        let str14 = 'avb a1b a2b a3b a4b a5b abb acb';
+        let str15 = 'ave a#b a2b a$b a4b a5b a-b acb';
+        let str16 = 'ave a#a a2a a$a a4a a5a a-a aca';
+        console.log(str11.replace(/a\da/g,"!"));
+        console.log(str12.replace(/a\d+a/g,"!"));
+        console.log(str13.replace(/a\d*a/g,"!"));
+        console.log(str14.replace(/a\Db/g,"!"));
+        console.log(str15.replace(/a\Wb/g,"!"));
+        console.log(str16.replace(/\s/g,"!"));
+    </script>
+</body>
+</html>
