@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = 'site.ru sss site.com zzz site.net';
+        let str1 = 'a1b c34d x567z';
+        console.log(str.match(/site\.(com|ru|net)/g));
+        let sum = 0;
+        str1.match(/\d/g).forEach(element => {
+            sum += Number(element);
+        });
+        console.log(sum);
+
+        let str2 = 'sss domain.ru zzz';
+        console.log(str2.match(/domain(.ru)/));
+        let str3 = '31.12.2025';
+        console.log(str3.match(/(\d+)\.(\d+)\.(\d+)/));
+
+        let str4 = '12 34 56 78';
+        console.log(str4.replace(/(\d)(\d)/g,'$2$1'));
+        let str5 = '31.12.2025';
+        console.log(str5.replace(/(\d+)\.(\d+)\.(\d+)/,"$3.$2.$1"));
+        
+        let str6 = 'a1b2c3';
+        console.log(str6.replace(/(.\d)(.\d)(.\d)/,"$1$'1$2$'2$3$'3"));
+        let str7 = 'sss site.ru zzz site.com kkk';
+        console.log(str7.replace(/(site\.\w+)/g,"http://$&"));
+
+        let str8 = 'aaa bbb ccc xyz';
+        console.log(str8.replace(/([a-z])\1+/g,"!"))
+        let str9 = 'a aa aaa aaaa aaaaa';
+        console.log(str9.replace(/([a-z])\1{1,}/g,"!"));
+        let str10 = 'aaa aaa bbb bbb ccc ddd';
+        console.log(str10.replace(/([a-z]{3})\s\1/g,"!"));
+    </script>
+</body>
+</html>

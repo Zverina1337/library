@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = 'func1() func2() func3()';
+        console.log(str.match(/.{4}\d\(\)/g))
+        let str1 = '<a href="" class="eee" id="zzz">';
+        console.log(str1.match(/\w+=\"(\w+|)\"/g));
+
+        let str2 = 'aaa [2] bbb [3] ccc [12] ddd';
+        let new_str2 = str2.replace(/\[(\d+)\]/g,function(elem,number){
+            let str = '[' + number * 2 + ']';
+            return str;
+        });
+        console.log(new_str2);
+
+        let str3 = '123 456 789';
+        let new_str3 = str3.replace(/((\d)(\d)(\d))/g,function(elem, one, two, three, four){
+            let str = four + three + two;
+            return str;
+        });
+        console.log(new_str3);
+
+        let str4 = '31.12.2025 30.11.2024 29.10.2023';
+        let new_str4 = str4.replace(/(\d+).(\d+).(\d+)/g, function(elem, one, two, three){
+            let str = three + "-" + two + "-" + one;
+            return str;
+        });
+        console.log(new_str4);
+
+        let str5 = '1 23 456 789';
+        console.log(str5.search(/\d{3}/));
+
+        let str6 = '2025-12-31 12:59:59';
+        console.log(str6.split(/[-: ]/));
+    </script>
+</body>
+</html>
