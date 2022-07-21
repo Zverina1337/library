@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent1">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+    <script>
+        let elems1 = document.querySelectorAll("#parent1 p");
+        let arr = Array.from(elems1);
+        console.log(arr);
+        console.log(arr.slice(1, arr.length - 1));
+
+        let arr1 = [1,2];
+        let arr2 = [3,4];
+        let arr3 = [5,6];
+        let map = new Map;
+
+        map.set(arr1, "data1");
+        map.set(arr2, "data2");
+        map.set(arr3, "data3");
+        
+        console.log(map.get(arr1));
+        console.log(map.get(arr2));
+        console.log(map.get(arr3));
+
+        map.clear();
+
+        map.set("data1",arr1);
+        map.set("data2",arr2);
+        map.set("data3",arr3);
+        
+        console.log(map.get("data1"));
+        console.log(map.get("data2"));
+        console.log(map.get("data3"));
+    </script>
+</body>
+</html>
