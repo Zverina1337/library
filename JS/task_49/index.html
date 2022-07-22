@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let json = `{
+	        "data1": [1,2,3],
+	        "data2": [4,5,6],
+	        "data3": [7,8,9]
+        }`;
+        let arr = JSON.parse(json);
+        let sum = 0;
+        let arr_data  = Array(arr.data1, arr.data2, arr.data3);
+        for(let i = 0;i < arr_data.length;i++){
+            for(let j = 0;j < arr_data.length;j++){
+                sum += arr_data[i][j];
+            }
+        }
+        console.log(sum);
+
+        let json1 = '["user1","user2","user3","user4","user5"]';
+        let arr1 = JSON.parse(json1);
+        let ul = document.createElement("ul");
+        let body = document.querySelector("body")
+        for(let elem of arr1){
+            let li = document.createElement("li");
+            li.innerHTML = elem;
+            ul.appendChild(li);
+        }
+        body.appendChild(ul);
+
+        let json2 = `[
+        {
+            "name": "user1",
+            "age": 25,
+            "salary": 1000
+        },
+        {
+            "name": "user2",
+            "age": 26,
+            "salary": 2000
+        },
+        {
+            "name": "user3",
+            "age": 27,
+            "salary": 3000
+        }
+        ]`;
+        let arr3 = JSON.parse(json2);
+        let table = document.createElement("table");
+        let i = 0;
+        for(let elem of arr3){
+            let tr = document.createElement("tr");
+            for(let elem of arr3){
+                let td = document.createElement("td");
+                if(i == 0){
+                    td.innerHTML = elem.name;
+                    
+                }else if(i == 1){
+                    td.innerHTML = elem.age;
+                }else if(i == 2){
+                    td.innerHTML = elem.salary;
+                }
+                    tr.appendChild(td);
+            }
+            i++;
+            table.appendChild(tr);
+        }
+        body.appendChild(table);
+    </script>
+</body>
+</html>

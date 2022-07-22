@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>city1</li>
+        <li>city2</li>
+        <li>city3</li>
+        <li>city4</li>
+    </ul>
+    <table>
+        <tr>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Отчество</th>
+        </tr>
+        <tr>
+            <td>Иванов</td>
+            <td>Иван</td>
+            <td>Иванович</td>
+        </tr>
+        <tr>
+            <td>Петров</td>
+            <td>Петр</td>
+            <td>Петрович</td>
+        </tr>
+        <tr>
+            <td>Сидоров</td>
+            <td>Сидр</td>
+            <td>Сидорович</td>
+        </tr>
+    </table>
+    <script>
+        let arr = ['user1', 'user2', 'user3', 'user4', 'user5'];
+        let json = JSON.stringify(arr);
+
+        console.log(json);
+
+        let elems = document.querySelectorAll("ul li");
+        json = [];
+        for(let elem of elems){
+            json.push(elem.tagName.toLowerCase());
+        }
+        json = JSON.stringify(json);
+        console.log(json);
+
+        json = [];
+        let all_table = document.querySelectorAll("table tr td");
+        let obj = {
+            name : "",
+            surname : "",
+            patronymic : ""
+        };
+        let i = 0;
+        for (let elem of all_table){
+            if(i == 0){
+                obj.surname = elem.innerHTML;
+            }else if(i == 1){
+                obj.name = elem.innerHTML;
+            }else if(i == 2){
+                obj.patronymic = elem.innerHTML;
+                i = -1;
+                json.push(obj);
+            }
+            i++;
+        }
+        json = JSON.stringify(json)
+        console.log(json);
+    </script>
+</body>
+</html>
