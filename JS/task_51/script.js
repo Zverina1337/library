@@ -1,21 +1,44 @@
-let time = localStorage.getItem('time');
+let time = localStorage.getItem('old_time');
 
 if(!time){
-    let old_hours = new Date().getHours();
-    let old_min = new Date().getMinutes();
-    let old_sec = new Date().getSeconds();
-    localStorage.setItem('hours', old_hours);
-    localStorage.setItem('min', old_min);
-    localStorage.setItem('sec', old_sec);
+    let time = Date.now();
+    localStorage.setItem('old_time', time);
 }else{
-    let now_hours = new Date().getHours();
-    let now_min = new Date().getMinutes();
-    let now_sec = new Date().getSeconds();
-    let old_hours = localStorage.getItem('hours');
-    let old_min = localStorage.getItem('min');
-    let old_sec = localStorage.getItem('sec');
-
-    let time = (now_hours - old_hours) + ":" + (now_min - old_min) + ":" + (now_sec - old_sec);
-
-    console.log(time);
+    let time = Date.now();
+    console.log(Math.round(((time - localStorage.getItem("old_time")) / 1000) / 60));
 }
+
+/////////////////////////////////////////////////////////////
+    let body = document.querySelector("body");
+if(!localStorage.getItem("birthday")){
+    window.onload = function (){
+    let input = document.createElement("input");
+    let p = document.createElement("p");
+    p.innerHTML = "Введите дату рождения";
+    input.type="date";
+    input.addEventListener("blur",function(){
+        if(this.value != ""){
+            let birthday = this.value.match(/[0-9][0-9]\-[0-9][0-9]$/);
+            localStorage.setItem("birthday", birthday[0]);
+            this.remove();
+            p.remove();
+        }
+    })
+    body.appendChild(p);
+    body.appendChild(input);  
+};
+}else{
+    let birthday = localStorage.getItem("birthday");
+    let now_day = new Date().getDate();
+    let now_month = new Date().getMonth() + 1;
+    let all_date = "0" + now_month + "-" + now_day;
+    let answer = document.createElement("p");
+
+    if(birthday == all_date){
+       answer.innerHTML = "С днём рождения!";
+    }else{
+        answer.innerHTML = "Сегодня не твой день рождения(";
+    }
+    body.appendChild(answer);
+}
+
