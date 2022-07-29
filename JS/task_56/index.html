@@ -7,6 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        function make(num1, num2, cb) {
+	        setTimeout(function() {
+		        let res = [1, 2, 3, 4, 5];
+                let sum = res[num1] + res[num2];
+                cb(sum);
+	        }, 3000);
+        }
+        make(1, 2, function(res){
+            console.log(res);
+        });
+        console.log('2');
+
+        let promise = new Promise(function(resolve){
+            setTimeout(function() {
+		        let result = [1, 2, 3, 4, 5];
+                resolve(result);
+	        }, 3000);
+        });
+        promise.then(function(result){
+            console.log(result);
+        })
+    </script>
 </body>
 </html>
