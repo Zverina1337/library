@@ -1,0 +1,17 @@
+{
+  "name": "task_6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
