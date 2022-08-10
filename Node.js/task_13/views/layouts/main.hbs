@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    <header>
+        {{> header }}
+        {{> sidebar }}
+    </header>
+    <main>
+        {{{body}}}
+        {{#with product}}
+            {{ name }}
+            {{ cost }}
+            {{ ../amount }}
+            {{ amount }}
+        {{/with}}
+        {{#each products}}
+            <p>{{.}}</p>
+        {{/each}}
+        {{#if show1}}
+            <div>
+                block 1
+            </div>
+        {{/if}}
+        {{#if show3}}
+            <div>
+                block 2
+            </div>
+        {{/if}}
+        {{#if show2}}
+            <div>
+                block 3
+            </div>
+        {{/if}}
+    </main>
+    <footer>
+        {{> footer }}
+    </footer>
+</body>
+</html>
