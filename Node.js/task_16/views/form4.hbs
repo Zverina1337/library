@@ -1,0 +1,13 @@
+<form action="/form4/" method="post">
+    <legend>Общие делители</legend><br>
+    <label for="num1">Число:</label>
+    <input type="text" name="num1"><br><br>
+    <label for="num2">Число:</label>
+    <input type="text" name="num2"><br><br>
+    <button type="submit">Отправить</button>
+</form>
+<ul>
+    {{#each answer}}
+        <li>{{.}}</li>
+    {{/each}}
+</ul>

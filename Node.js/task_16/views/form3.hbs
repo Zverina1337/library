@@ -1,0 +1,11 @@
+<form action="/form3/" method="post">
+    <legend>Найти делители</legend><br>
+    <label for="num">Число</label>
+    <input type="text" name="num"><br><br>
+    <button type="submit">Отправить</button>
+</form>
+<ul>
+    {{#each answer}}
+        <li>{{.}}</li>
+    {{/each}}
+</ul>
