@@ -1,0 +1,11 @@
+<form action="/form9/" method="post">
+    <legend>Form 9</legend><br>
+    <label for="text">Введите текст: </label><br>
+    <textarea name="text" cols="30" rows="10"></textarea><br><br>
+    <button type="submit">Отправить</button>
+</form>
+<ul>
+    {{#each answer}}
+    <li>{{.}}</li>
+    {{/each}}
+</ul>
