@@ -53,3 +53,93 @@ if(login == 'Админ'){
 }else{
     alert('Я вас не знаю!');
 }
+// 11
+let nums = [2,3,4,5,6,7,8,9,10];
+for(let num of nums){
+    if(num % 2 == 0){
+        console.log(num);
+    }
+}
+// 12
+let i = 0;
+
+while(i < 3){
+    console.log(`number ${i}`);
+    i++;
+}
+
+// 13
+
+function recourse(){
+    let num = prompt('Напишите число большее 100.');
+    if(num <= 100){
+        recourse();
+    }
+}
+recourse();
+
+// 14
+
+function primeNums(num){
+    for(let i = 2; i <= num;i++){
+        if(num % i !== 0){
+            console.log(num);
+        }
+    }
+}
+
+let number = prompt('Введите число');
+primeNums(number);
+
+// 15
+
+const n = Number(prompt('Введите число между 0 и 3', ''));
+
+switch(n){
+    case 0: {
+        alert('Вы ввели число 1');
+        break;
+    }
+    case 1: {
+        alert('Вы ввели число 1');
+        break;
+    }
+    case 3 || 2: {
+        alert('Вы ввели число 1');
+        break;
+    }
+}
+
+// 16
+
+function min(a,b){
+    return console.log(Math.min(a,b));
+}
+
+let a_ = prompt("Введите число a");
+let b_ = prompt("Введите число b");
+
+min(a_,b_);
+
+// 17
+
+function pow(a, n = 2){
+    return console.log(Math.pow(a,n));
+}
+let num_ = prompt('Введите число');
+let n_ = prompt(`Введите степень числа ${num_}`);
+
+pow(num_, n_);
+
+// 18
+
+let ask = (question, yes, no) => {
+    if (confirm(question)) yes()
+    else no();
+ }
+ask(
+    "Вы согласны?",
+    function() { alert("Вы согласились."); },
+    function() { alert("Вы отменили выполнение."); }
+ );
+ 
